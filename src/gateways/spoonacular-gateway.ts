@@ -1,9 +1,10 @@
 import axios from "axios";
+import {RecipeByIngredientResponse} from "../types/recipe-by-ingredient-response";
 
-const spoonacularIngredientsBaseUrl = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${import.meta.env.VITE_SPOONACULAR_API_KEY}`
-const randomRecipe = `https://api.spoonacular.com/recipes/random?apiKey=${import.meta.env.VITE_SPOONACULAR_API_KEY}`
+const ingredientsBaseUrl = `https://api.spoonacular.com/recipes/findByIngredients?apiKey=${import.meta.env.VITE_SPOONACULAR_API_KEY}`
 
-export function getRandomRecipe() {
-    console.log(randomRecipe)
-    return axios.get(randomRecipe).then(result => result.data)
+export async function getRecipeByIngredients(ingredients: string[]) : Promise<RecipeByIngredientResponse[]> {
+    const requestUrl = `${ingredientsBaseUrl}&ingredients=${ingredients.join("+")}&ignorePantry=false`
+    const response = await axios.get(requestUrl);
+    return response.data
 }

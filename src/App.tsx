@@ -1,15 +1,16 @@
-import {SearchPage} from "./pages/search-page";
+import React from 'react';
+import { SearchPage } from './pages/search-page';
 
 function App() {
-    // const recipe = getRecipeByIngredients(["eggs"]);
-    //
-    // console.log('RECEPTEN', recipe)
+  // const recipe = getRecipeByIngredients(["eggs"]);
+  //
+  // console.log('RECEPTEN', recipe)
 
   return (
     <div className="App">
-        <SearchPage />
+      <SearchPage />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

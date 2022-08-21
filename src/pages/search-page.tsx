@@ -1,4 +1,6 @@
-import React, { ChangeEvent, ReactElement, useState } from 'react';
+import React, { ChangeEvent, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 
 export function SearchPage() {
   const [ingredientToAdd, setIngredientToAdd] = useState<string>('');
@@ -34,6 +36,9 @@ export function SearchPage() {
           </div>
           <div className={'w-2/4 p-4 bg-amber-100 rounded m-6 drop-shadow-xl'}>
             <h2 className={'pb-2.5'}>Added ingredients</h2>
+            <span>
+              <FontAwesomeIcon icon={faTrashCan} />
+            </span>
             {renderSelectedIngredients()}
           </div>
         </div>

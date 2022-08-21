@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply font-montserrat text-black /* @apply is a way to add tailwind notation to css files */
+  @apply font-montserrat text-black bg-amber-50 /* @apply is a way to add tailwind notation to css files */
 }
 
 h2 {

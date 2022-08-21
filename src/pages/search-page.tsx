@@ -10,11 +10,15 @@ export function SearchPage() {
 
   return (
     <div>
-      <h1 className={'font-semibold text-center'}>Kitchen Tetris</h1>
-      <div className={'bg-amber-100 flex flex-col'}>
+      <div className={'h-40 bg-cover flex justify-center items-center relative bg-hero-pattern'}>
+        <h1 className={'font-semibold text-3xl text-center bg-white/75 p-2 rounded h-fit m-3 w-2/4 rounded'}>
+          Kitchen Tetris
+        </h1>
+      </div>
+      <div className={'flex flex-col'}>
         <div className={'flex justify-around'}>
-          <div>
-            <h2>Search ingredients</h2>
+          <div className={'p-4 w-2/4 bg-amber-100 rounded m-6 drop-shadow-xl'}>
+            <h2 className={'pb-2.5'}>Search ingredients</h2>
             <input
               className={'pl-2 pr-2 pt-1 pb-1 rounded-lg border-2 focus:outline-none focus:border-amber-200'}
               placeholder="add an ingredient"
@@ -28,15 +32,21 @@ export function SearchPage() {
               }}
             />
           </div>
-          <div>
-            <h2>Added ingredients</h2>
+          <div className={'w-2/4 p-4 bg-amber-100 rounded m-6 drop-shadow-xl'}>
+            <h2 className={'pb-2.5'}>Added ingredients</h2>
             {renderSelectedIngredients()}
           </div>
         </div>
-        <button className={'p-2'}>Look for recipes</button>
+        <button
+          className={
+            'p-4 bg-amber-200 rounded font-semibold max-w-fit border-amber-300 border-2 flex place-self-center drop-shadow-xl'
+          }
+        >
+          Look for recipes &#x1F50E;
+        </button>
       </div>
       <div className={'flex justify-center'}>
-        <h2>Recipes you can make</h2>
+        <h2 className={'p-4 m-4 bg-amber-100 w-full drop-shadow-xl'}>Recipes you can make</h2>
       </div>
     </div>
   );

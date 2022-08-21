@@ -11,8 +11,8 @@ export function SearchIngredientsBlock({ onIngredientAdd }: SearchIngredientsBlo
     <div className={'p-4 w-2/4 bg-amber-100 rounded m-6 drop-shadow-xl'}>
       <h2 className={'p-1'}>Search ingredients</h2>
       <input
-        className={'pl-2 pr-2 pt-2 pb-1 rounded-lg border-2 focus:outline-none focus:border-amber-200'}
-        placeholder="add an ingredient"
+        className={'p-2 rounded-lg border-2 focus:outline-none focus:border-amber-200'}
+        placeholder="enter one ingredient"
         onChange={(event: ChangeEvent<HTMLInputElement>) => setIngredientToAdd(event.target.value)}
         onKeyDown={(event) => {
           if (event.key === 'Enter') {
@@ -22,6 +22,12 @@ export function SearchIngredientsBlock({ onIngredientAdd }: SearchIngredientsBlo
           }
         }}
       />
+      <button
+        className={'ml-2 p-1 bg-amber-200 rounded font-semibold border-amber-300 border-2 cursor-pointer'}
+        onClick={() => onIngredientAdd(ingredientToAdd)}
+      >
+        Add
+      </button>
     </div>
   );
 }

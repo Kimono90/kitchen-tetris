@@ -16,6 +16,7 @@ export function RecipeResultsSection({ recipes }: RecipeResultsSectionProps): Re
           {recipe.likes}
           <FontAwesomeIcon icon={faThumbsUp} className={'ml-2'} />
         </div>
+        <div className={'w-32 h-32 bg-cover bg-center'} style={{ backgroundImage: `url('${recipe.image}')` }}></div>
       </div>
     ));
   }

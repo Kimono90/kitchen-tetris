@@ -16,7 +16,6 @@ export function SearchIngredientsBlock({ onIngredientAdd }: SearchIngredientsBlo
         onChange={(event: ChangeEvent<HTMLInputElement>) => setIngredientToAdd(event.target.value)}
         onKeyDown={(event) => {
           if (event.key === 'Enter') {
-            console.log('adding');
             onIngredientAdd(ingredientToAdd);
             event.currentTarget.value = '';
           }

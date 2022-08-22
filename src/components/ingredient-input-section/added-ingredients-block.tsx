@@ -13,7 +13,11 @@ export function AddedIngredientsBlock({ selectedIngredients, onDeleteClick }: Ad
   const hoveringClass = isHoveringTrash ? 'line-through' : '';
 
   function renderSelectedIngredients(): JSX.Element[] {
-    return selectedIngredients.map((i) => <div className={`ml-1 ${hoveringClass}`}>{i}</div>);
+    return selectedIngredients.map((i, index) => (
+      <div key={index} className={`ml-1 ${hoveringClass}`}>
+        {i}
+      </div>
+    ));
   }
 
   return (

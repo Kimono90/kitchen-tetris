@@ -2,7 +2,11 @@ import React, { ReactElement, useState } from 'react';
 import { SearchIngredientsBlock } from './search-ingredients-block';
 import { AddedIngredientsBlock } from './added-ingredients-block';
 
-export function IngredientInputSection(): ReactElement {
+export type IngredientInputSectionProps = {
+  onSearchRecipes: (ingredients: string[]) => void;
+};
+
+export function IngredientInputSection({ onSearchRecipes }: IngredientInputSectionProps): ReactElement {
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
   return (
@@ -17,6 +21,7 @@ export function IngredientInputSection(): ReactElement {
         className={
           'p-4 bg-amber-200 rounded font-semibold max-w-fit border-amber-300 border-2 flex place-self-center drop-shadow-xl'
         }
+        onClick={() => onSearchRecipes(selectedIngredients)}
       >
         Look for recipes &#x1F50E;
       </button>

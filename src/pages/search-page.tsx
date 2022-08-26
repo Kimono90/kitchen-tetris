@@ -24,7 +24,7 @@ export function SearchPage() {
       </header>
       <IngredientInputSection onSearchRecipes={handleRecipeSearch} />
       {recipeResultsLoading && <div>Loading results</div>}
-      {recipeResults.length && <RecipeResultsSection recipes={recipeResults} />}
+      {recipeResults.length ? <RecipeResultsSection recipes={recipeResults} /> : null}
     </>
   );
 }

@@ -9,14 +9,21 @@ export type RecipeResultsSectionProps = {
 
 export function RecipeResultsSection({ recipes }: RecipeResultsSectionProps): ReactElement {
   function renderRecipes(): JSX.Element[] {
-    return recipes.map((recipe) => (
-      <div className={'flex justify-between m-1 bg-amber-100 min-w-[40%] max-w-[40%]'} key={recipe.id}>
-        <div className={'font-semibold'}>{recipe.title}</div>
-        <div className={'font-semibold'}>
+    return recipes.map((recipe, index) => (
+      <div
+        className={`animate-render duration-${
+          (index + 1) * 300
+        } flex justify-between flex-col m-2 mb-4 bg-amber-100 w-72 w-60 relative cursor-pointer rounded drop-shadow-xl transition-all hover:scale-105`}
+        key={recipe.id}
+      >
+        <div className={'font-semibold flex flex-row justify-between p-1 ml-2 mr-2'}>
+          <p className={'break-words'}>{recipe.title}</p>
+        </div>
+        <div className={'font-semibold p-2 whitespace-nowrap absolute bottom-0 right-0 bg-amber-100 rounded-tl rounded-br'}>
           {recipe.likes}
           <FontAwesomeIcon icon={faThumbsUp} className={'ml-2'} />
         </div>
-        <div className={'w-32 h-32 bg-cover bg-center'} style={{ backgroundImage: `url('${recipe.image}')` }}></div>
+        <div className={'h-60 bg-cover bg-center rounded-br'} style={{ backgroundImage: `url('${recipe.image}')` }}></div>
       </div>
     ));
   }
@@ -24,7 +31,7 @@ export function RecipeResultsSection({ recipes }: RecipeResultsSectionProps): Re
   return (
     <>
       <div className={'flex justify-center'}>
-        <h2 className={'p-4 m-4 bg-amber-100 w-full drop-shadow-xl'}>Recipes you can make</h2>
+        <h2 className={'animate-render p-4 m-4 bg-amber-100 w-full drop-shadow-xl'}>Recipes you can make</h2>
       </div>
       <div className={'flex flex-wrap justify-around m-4'}>{renderRecipes()}</div>
     </>

@@ -14,7 +14,7 @@ export function RecipeResultsSection({ recipes }: RecipeResultsSectionProps): Re
       <div
         className={`animate-render duration-${
           (index + 1) * 300
-        } flex justify-between flex-col m-2 mb-4 bg-amber-100 w-72 w-60 relative cursor-pointer rounded drop-shadow-xl transition-all hover:scale-105`}
+        } flex justify-between flex-col m-2 mb-4 bg-amber-100 w-72 relative cursor-pointer rounded drop-shadow-xl transition-all hover:scale-105`}
         key={recipe.id}
         onClick={() => getRecipeInformation(recipe.id).then((r) => window.open(r.sourceUrl, '_blank'))}
       >

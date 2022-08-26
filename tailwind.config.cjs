@@ -3,11 +3,18 @@ module.exports = {
   content: ["./src/**/*.{html,js,ts,tsx}"],
   theme: {
     extend: {
-      animation: {render: 'render 0.5s ease-in-out'},
+      animation: {
+        render: 'render 0.5s ease-in-out',
+        slide_in: 'slide_in 0.2s ease-in-out'
+      },
       keyframes: {
         render: {
           '0%': {'opacity': '0', 'transform' : 'translateY(-10px)'},
           '100%': {'opacity': '1', 'transform' : 'translateY(0)'}
+        },
+        slide_in: {
+          '0%': {'opacity': '0', 'transform' : 'translateX(10px)'},
+          '100%': {'opacity': '1', 'transform' : 'translateX(0)'}
         }
       },
     fontFamily: {

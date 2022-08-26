@@ -18,7 +18,7 @@ export function SearchPage() {
   return (
     <>
       <header className={'h-40 bg-cover flex justify-center items-center relative bg-gradient'}>
-        <h1 className={'font-semibold text-3xl text-center bg-white/75 p-2 rounded h-fit m-3 w-2/4 rounded'}>
+        <h1 className={'font-semibold text-3xl text-center bg-white/75 p-2 rounded h-fit m-3 md:w-2/4 w-11/12 rounded'}>
           Kitchen Tetris
         </h1>
       </header>

@@ -2,6 +2,7 @@ import React, { ReactElement } from 'react';
 import { RecipeByIngredientResponse } from '../../types/recipe-by-ingredient-response';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { getRecipeInformation } from '../../gateways/spoonacular-gateway';
 
 export type RecipeResultsSectionProps = {
   recipes: RecipeByIngredientResponse[];
@@ -15,6 +16,7 @@ export function RecipeResultsSection({ recipes }: RecipeResultsSectionProps): Re
           (index + 1) * 300
         } flex justify-between flex-col m-2 mb-4 bg-amber-100 w-72 w-60 relative cursor-pointer rounded drop-shadow-xl transition-all hover:scale-105`}
         key={recipe.id}
+        onClick={() => getRecipeInformation(recipe.id).then((r) => window.open(r.sourceUrl, '_blank'))}
       >
         <div className={'font-semibold flex flex-row justify-between p-1 ml-2 mr-2'}>
           <p className={'break-words'}>{recipe.title}</p>

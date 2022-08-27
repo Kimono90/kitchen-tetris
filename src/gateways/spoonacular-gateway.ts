@@ -5,10 +5,6 @@ const byIngredientsUrl = `https://api.spoonacular.com/recipes/findByIngredients?
   import.meta.env.VITE_SPOONACULAR_API_KEY
 }`;
 
-const recipeInformationUrl = `https://api.spoonacular.com/recipes/{id}/information?apiKey=${
-  import.meta.env.VITE_SPOONACULAR_API_KEY
-}`;
-
 export async function getRecipeByIngredients(ingredients: string[]): Promise<RecipeByIngredientResponse[]> {
   const requestUrl = `${byIngredientsUrl}&ingredients=${ingredients.join('+')}&ignorePantry=false`;
   const response = await axios.get(requestUrl);

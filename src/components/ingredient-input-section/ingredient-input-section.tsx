@@ -3,9 +3,13 @@ import { SearchIngredientsBlock } from './search-ingredients-block';
 
 export type IngredientInputSectionProps = {
   onSearchRecipes: (ingredients: string[]) => void;
+  onEmptySelectedIngredients: () => void;
 };
 
-export function IngredientInputSection({ onSearchRecipes }: IngredientInputSectionProps): ReactElement {
+export function IngredientInputSection({
+  onSearchRecipes,
+  onEmptySelectedIngredients,
+}: IngredientInputSectionProps): ReactElement {
   const [selectedIngredients, setSelectedIngredients] = useState<string[]>([]);
 
   function handleIngredientRemove(ingredientToRemove: string) {
@@ -19,7 +23,10 @@ export function IngredientInputSection({ onSearchRecipes }: IngredientInputSecti
         <SearchIngredientsBlock
           onIngredientAdd={(ingredientToAdd) => setSelectedIngredients([...selectedIngredients, ingredientToAdd])}
           selectedIngredients={selectedIngredients}
-          onDeleteAllClick={() => setSelectedIngredients([])}
+          onDeleteAllClick={() => {
+            setSelectedIngredients([]);
+            onEmptySelectedIngredients();
+          }}
           onDeleteSingleClick={handleIngredientRemove}
         />
       </div>

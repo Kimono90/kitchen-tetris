@@ -16,7 +16,7 @@ export function SearchIngredientsBlock({
   onDeleteSingleClick,
 }: SearchIngredientsBlockProps): ReactElement {
   const [ingredientToAdd, setIngredientToAdd] = useState<string>('');
-  const [isHoveringTrash, setIsHoveringTrash] = useState(false);
+  const [isHoveringTrash, setIsHoveringTrash] = useState<boolean>(false);
 
   const hoveringClass = isHoveringTrash ? 'line-through' : '';
 

@@ -60,7 +60,10 @@ export function SearchIngredientsBlock({
             icon={faTrashCan}
             title={'Remove all ingredients'}
             className={'p-0.5 cursor-pointer hover:text-red-500'}
-            onClick={onDeleteAllClick}
+            onClick={() => {
+              onDeleteAllClick();
+              setIsHoveringTrash(false);
+            }}
             onMouseOver={() => setIsHoveringTrash(true)}
             onMouseLeave={() => setIsHoveringTrash(false)}
           />
